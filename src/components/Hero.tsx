@@ -106,7 +106,7 @@ export default function Hero() {
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[750px] z-0 pointer-events-none hidden md:block scale-75 md:scale-100 origin-top">
           <svg width="100%" height="100%" viewBox="0 0 1010 906" fill="none" xmlns="http://www.w3.org/2000/svg">
             <foreignObject x="49" y="0" width="911.075" height="905.231">
-              <div xmlns="http://www.w3.org/1999/xhtml" style={{ backdropFilter: 'blur(17.5px)', clipPath: 'url(#bgblur_0_2011_180_clip_path)', height: '100%', width: '100%' }}></div>
+              <div style={{ backdropFilter: 'blur(17.5px)', clipPath: 'url(#bgblur_0_2011_180_clip_path)', height: '100%', width: '100%' }}></div>
             </foreignObject>
             <g filter="url(#filter0_d_2011_180)" data-figma-bg-blur-radius="35">
               <mask id="path-1-inside-1_2011_180" fill="white">
