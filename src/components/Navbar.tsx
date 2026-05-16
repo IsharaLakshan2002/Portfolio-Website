@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
-import customLogo from '../assets/logo.png';
+import { Sun, Moon, Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,12 +27,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] h-16 flex items-center justify-between px-[5vw] transition-all duration-300 ${scrolled ? 'glass' : 'bg-transparent'}`}>
       <a href="#" className="flex items-center gap-3 no-underline group">
-        <img 
-          src={customLogo} 
-          alt="Ishara Logo" 
-          className="w-10 h-10 object-contain transition-transform group-hover:scale-110" 
-        />
-        <span className="font-accent text-base font-bold text-[var(--text-primary)]">Ishara</span>
+        <img src={logo} alt="Logo" className="h-10 w-auto transition-transform group-hover:scale-110" />
       </a>
 
       <div className="flex items-center gap-2">

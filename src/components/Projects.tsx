@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Globe, Smartphone, Coffee, Layers, ThumbsUp, Eye } from 'lucide-react';
+import { ExternalLink, Globe, Smartphone, Coffee, Layers, ThumbsUp, Eye, X } from 'lucide-react';
 
 const projects = [
   {
@@ -46,6 +46,7 @@ const projects = [
     category: ['web', 'ui'],
     isImageCard: true,
     image: 'https://www.dropbox.com/scl/fi/lvqof0p3bdi7kep5l0iul/vogue.png?rlkey=a9ddtcf6rdclbs1l0ktk7tbhn&st=rnqftwko&raw=1',
+    longImage: 'https://www.dropbox.com/scl/fi/0ncmm5aytexx836o3hbkk/Vogue-and-thread.png?rlkey=r54i1llts8yusgepp9cj8k6jh&st=nih7sqrc&raw=1',
     likes: 124,
     views: 1205
   },
@@ -56,6 +57,7 @@ const projects = [
     category: ['web', 'ui'],
     isImageCard: true,
     image: 'https://www.dropbox.com/scl/fi/aiymdd1fghqdzqnka39nn/nexa.png?rlkey=wv9mcir4jfbide8rcnj5fsxib&st=666e8pqt&raw=1',
+    longImage: 'https://www.dropbox.com/scl/fi/bsd8h9de1yjtiq7f6u2yq/nexxx.png?rlkey=8om12flrsltd28h631vk6zlu2&st=n1p6919d&raw=1',
     likes: 89,
     views: 432
   },
@@ -66,6 +68,7 @@ const projects = [
     category: ['app', 'ui'],
     isImageCard: true,
     image: 'https://www.dropbox.com/scl/fi/nj2ai6tfuvqdvqx72lp40/green.png?rlkey=an9b6td5jdfe0lq6ymqlyr2aq&st=ljldbw8k&raw=1',
+    longImage: 'https://www.dropbox.com/scl/fi/98es853lshesxj8dxp1oa/Greeenscan.png?rlkey=weafwuezzqp9duokn4v8h9d2j&st=ymmhm1rc&raw=1',
     likes: 256,
     views: 3102
   },
@@ -76,6 +79,7 @@ const projects = [
     category: ['web', 'ui'],
     isImageCard: true,
     image: 'https://www.dropbox.com/scl/fi/uzz1giu3xw01e7gghdwju/ChatGPT-Image-May-16-2026-12_53_01-PM.png?rlkey=z59capw4d4yd166j5uxvhvdxk&st=pullhmsx&raw=1',
+    longImage: 'https://www.dropbox.com/scl/fi/ugth3eqq2yyz3xgfed2zi/Frame-2085669056.png?rlkey=dy10cxmt20a9ekdi6rcswkzex&st=i3h6521d&raw=1',
     likes: 340,
     views: 4012
   },
@@ -86,6 +90,7 @@ const projects = [
     category: ['web', 'ui'],
     isImageCard: true,
     image: 'https://www.dropbox.com/scl/fi/tmbjc3mvkuaatudapzrni/Section.png?rlkey=mcvjsutq08vvztktg30mbw9fa&st=1ms9s0q9&raw=1',
+    longImage: 'https://www.dropbox.com/scl/fi/0sjcvqs9omnh0hewg8z1l/Bloom.png?rlkey=zr56838o5o0k6rp7dldyrjpro&st=1c808z34&raw=1',
     likes: 112,
     views: 890
   }
@@ -101,6 +106,7 @@ const categories = [
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   const filteredProjects = projects.filter(p =>
     filter === 'all' || (Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter)
@@ -140,6 +146,7 @@ export default function Projects() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
+                  onClick={() => project.longImage && setSelectedProject(project)}
                   className="group relative rounded-xl overflow-hidden cursor-pointer aspect-[4/3] bg-[var(--bg-card)] border border-[var(--border)] shadow-xl"
                 >
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -197,6 +204,40 @@ export default function Projects() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Full Screen Image Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-2 md:p-10 bg-black/90 backdrop-blur-md"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ y: 50, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 50, opacity: 0, scale: 0.95 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-5xl h-[90vh] md:h-[85vh] bg-[#f8f9fa] dark:bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="absolute top-4 right-4 z-10">
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className="w-10 h-10 bg-black/60 hover:bg-accent hover:text-black text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              <div className="overflow-y-auto w-full h-full custom-scrollbar">
+                <img src={selectedProject.longImage} alt={selectedProject.title} className="w-full h-auto" />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
