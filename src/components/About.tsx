@@ -4,10 +4,12 @@ import profilePic from '../assets/Ishara_boss.png';
 
 const skills = [
   { label: 'Java', pct: 90 },
-  { label: 'Android', pct: 80 },
-  { label: 'Web', pct: 85 },
-  { label: 'SQL', pct: 88 },
-  { label: 'PHP', pct: 78 },
+  { label: 'React', pct: 85 },
+  { label: 'Figma', pct: 80 },
+  { label: 'Photoshop', pct: 75 },
+  { label: 'Illustrator', pct: 75 },
+  { label: 'Premiere', pct: 70 },
+  { label: 'Adobe XD', pct: 80 },
 ];
 
 function SkillRing({ label, pct, index }: { label: string, pct: number, index: number }) {

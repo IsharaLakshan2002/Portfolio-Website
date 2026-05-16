@@ -19,24 +19,6 @@ const services = [
     title: 'UI/UX Design',
     description: 'Designing pixel-perfect, aesthetically premium interfaces that not only look stunning but drive conversions and elevate your brand identity.',
     icon: <LayoutTemplate size={28} strokeWidth={1.5} />
-  },
-  {
-    id: 4,
-    title: 'Android Engineering',
-    description: 'Developing robust native Android applications using Java, strictly following best practices for performance, battery optimization, and fluid animations.',
-    icon: <Code2 size={28} strokeWidth={1.5} />
-  },
-  {
-    id: 5,
-    title: 'Database Architecture',
-    description: 'Designing optimized relational and non-relational database models that ensure data integrity, rapid querying, and flawless scalability.',
-    icon: <Database size={28} strokeWidth={1.5} />
-  },
-  {
-    id: 6,
-    title: 'API Development',
-    description: 'Creating secure RESTful backend services to connect complex frontends with databases, acting as the high-performance nervous system of your app.',
-    icon: <ServerCog size={28} strokeWidth={1.5} />
   }
 ];
 
