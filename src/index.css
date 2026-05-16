@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Bebas Neue", cursive;
+  --font-accent: "Syne", sans-serif;
+
+  --color-accent: #f97316;
+  --color-accent-hover: #ea6c0a;
+}
+
+:root {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f0f0f0;
+  --bg-card: #ffffff;
+  --text-primary: #0a0a0a;
+  --text-secondary: #404040;
+  --text-muted: #a3a3a3;
+  --border: rgba(0,0,0,0.08);
+  --accent: #f97316;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #141414;
+  --bg-card: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --text-muted: #525252;
+  --border: rgba(255,255,255,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.perspective-text {
+  perspective: 1000px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="dark"] .glass {
+  background: rgba(13, 13, 13, 0.7);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
