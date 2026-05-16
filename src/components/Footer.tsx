@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
+import customLogo from '../assets/logo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -6,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="py-12 px-[5vw] bg-[var(--bg-secondary)] border-t border-[var(--border)]">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
-        <div className="font-display text-4xl text-accent tracking-widest">IE.</div>
+        <img src={customLogo} alt="Ishara Logo" className="h-12 w-auto object-contain" />
         
         <nav className="flex flex-wrap justify-center gap-x-10 gap-y-4">
           {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'].map((link) => (
