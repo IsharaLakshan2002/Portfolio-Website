@@ -103,13 +103,48 @@ export default function Hero() {
         </div>
 
         {/* Decorative Arcs Behind Image */}
-        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] z-0 pointer-events-none opacity-80 hidden md:block">
-          <svg width="100%" height="100%" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 100 400 C 100 200, 150 100, 250 80" stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" />
-            <path d="M 60 400 C 60 160, 120 70, 220 50" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" />
-
-            <path d="M 400 400 C 400 200, 350 100, 250 80" stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" />
-            <path d="M 440 400 C 440 160, 380 70, 280 50" stroke="var(--text-muted)" strokeWidth="2" strokeLinecap="round" />
+        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[750px] z-0 pointer-events-none hidden md:block scale-75 md:scale-100 origin-top">
+          <svg width="100%" height="100%" viewBox="0 0 1010 906" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <foreignObject x="49" y="0" width="911.075" height="905.231">
+              <div xmlns="http://www.w3.org/1999/xhtml" style={{ backdropFilter: 'blur(17.5px)', clipPath: 'url(#bgblur_0_2011_180_clip_path)', height: '100%', width: '100%' }}></div>
+            </foreignObject>
+            <g filter="url(#filter0_d_2011_180)" data-figma-bg-blur-radius="35">
+              <mask id="path-1-inside-1_2011_180" fill="white">
+                <path d="M504.538 100C700.896 100 860.075 258.94 860.075 455.001C860.075 457.456 860.05 459.905 860 462.349V805.231H149V448.231H149.063C152.677 255.294 310.445 100 504.538 100Z"/>
+              </mask>
+              <path d="M504.538 100C700.896 100 860.075 258.94 860.075 455.001C860.075 457.456 860.05 459.905 860 462.349V805.231H149V448.231H149.063C152.677 255.294 310.445 100 504.538 100Z" fill="#E9E3DC" fillOpacity="0.05" shapeRendering="crispEdges"/>
+              <path d="M504.538 100V97.505V97.505V100ZM860.075 455.001H862.57V455.001H860.075ZM860 462.349L857.506 462.298L857.505 462.323V462.349H860ZM860 805.231V807.726H862.495V805.231H860ZM149 805.231H146.505V807.726H149V805.231ZM149 448.231V445.736H146.505V448.231H149ZM149.063 448.231V450.726H151.512L151.558 448.278L149.063 448.231ZM504.538 100V102.495C699.522 102.495 857.58 260.321 857.58 455.001H860.075H862.57C862.57 257.558 702.27 97.5053 504.538 97.505V100ZM860.075 455.001H857.58C857.58 457.439 857.555 459.871 857.506 462.298L860 462.349L862.494 462.399C862.544 459.94 862.57 457.473 862.57 455.001H860.075ZM860 462.349H857.505V805.231H860H862.495V462.349H860ZM860 805.231V802.737H149V805.231V807.726H860V805.231ZM149 805.231H151.495V448.231H149H146.505V805.231H149ZM149 448.231V450.726H149.063V448.231V445.736H149V448.231ZM149.063 448.231L151.558 448.278C155.146 256.701 311.804 102.495 504.538 102.495V100V97.505C309.086 97.505 150.208 253.887 146.569 448.185L149.063 448.231Z" fill="url(#paint0_linear_2011_180)" fillOpacity="0.5" mask="url(#path-1-inside-1_2011_180)"/>
+              <path d="M504.538 100V97.505V97.505V100ZM860.075 455.001H862.57V455.001H860.075ZM860 462.349L857.506 462.298L857.505 462.323V462.349H860ZM860 805.231V807.726H862.495V805.231H860ZM149 805.231H146.505V807.726H149V805.231ZM149 448.231V445.736H146.505V448.231H149ZM149.063 448.231V450.726H151.512L151.558 448.278L149.063 448.231ZM504.538 100V102.495C699.522 102.495 857.58 260.321 857.58 455.001H860.075H862.57C862.57 257.558 702.27 97.5053 504.538 97.505V100ZM860.075 455.001H857.58C857.58 457.439 857.555 459.871 857.506 462.298L860 462.349L862.494 462.399C862.544 459.94 862.57 457.473 862.57 455.001H860.075ZM860 462.349H857.505V805.231H860H862.495V462.349H860ZM860 805.231V802.737H149V805.231V807.726H860V805.231ZM149 805.231H151.495V448.231H149H146.505V805.231H149ZM149 448.231V450.726H149.063V448.231V445.736H149V448.231ZM149.063 448.231L151.558 448.278C155.146 256.701 311.804 102.495 504.538 102.495V100V97.505C309.086 97.505 150.208 253.887 146.569 448.185L149.063 448.231Z" fill="url(#paint1_linear_2011_180)" fillOpacity="0.1" mask="url(#path-1-inside-1_2011_180)"/>
+            </g>
+            <path d="M254.999 74C250.138 76.1605 221.699 99.5343 216.999 103.5C209.867 109.518 198.999 121.5 198.999 121.5C182.617 138.238 162.415 166.396 151.499 187.5C141.739 206.369 134.949 224.637 128.571 245.136C123.601 261.111 119.241 276.55 115.999 293C110.435 369.048 109.499 457.663 109.499 537" stroke="#C76526" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M754.098 76C758.959 78.1605 787.398 101.534 792.098 105.5C799.23 111.518 810.098 123.5 810.098 123.5C826.48 140.238 846.682 168.396 857.598 189.5C867.358 208.369 874.148 226.637 880.525 247.136C885.495 263.111 889.856 278.55 893.098 295C898.661 371.048 899.598 459.663 899.598 539" stroke="#C76526" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M187.113 81.7741C139.074 133.593 112.99 188.012 109.952 193.359C105.342 201.473 99.2906 216.475 99.2906 216.475C89.7108 237.847 80.4977 271.255 77.5569 294.832C74.9275 315.913 74.8765 335.401 75.9846 356.841" stroke="#D1EF53" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M821.984 83.7741C870.023 135.593 896.107 190.012 899.145 195.359C903.755 203.473 909.806 218.475 909.806 218.475C919.386 239.847 928.599 273.255 931.54 296.832C934.169 317.913 934.22 337.401 933.112 358.841" stroke="#D1EF53" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M99.5283 138.612C87.5415 156.151 78.5758 173.455 69.7474 193.025" stroke="#E9E3DC" strokeWidth="6" strokeLinecap="round"/>
+            <path d="M911.299 149.734C922.165 167.989 930.031 185.819 937.618 205.903" stroke="#E9E3DC" strokeWidth="6" strokeLinecap="round"/>
+            <defs>
+              <filter id="filter0_d_2011_180" x="49" y="0" width="911.075" height="905.231" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="50"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2011_180"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2011_180" result="shape"/>
+              </filter>
+              <clipPath id="bgblur_0_2011_180_clip_path" transform="translate(-49 0)">
+                <path d="M504.538 100C700.896 100 860.075 258.94 860.075 455.001C860.075 457.456 860.05 459.905 860 462.349V805.231H149V448.231H149.063C152.677 255.294 310.445 100 504.538 100Z"/>
+              </clipPath>
+              <linearGradient id="paint0_linear_2011_180" x1="879.179" y1="53.5477" x2="24.9917" y2="173.747" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#1E1E1E"/>
+                <stop offset="1" stopColor="#848484"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_2011_180" x1="879.179" y1="53.5477" x2="24.9917" y2="173.747" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#848484"/>
+                <stop offset="1" stopColor="#1E1E1E"/>
+              </linearGradient>
+            </defs>
           </svg>
         </div>
 
