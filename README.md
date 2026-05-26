@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Ishara Lakshan - Professional Portfolio
 
-# Run and deploy your AI Studio app
+A premium, interactive portfolio built with React, Vite, and Tailwind CSS. Showcases UI/UX design, Web Development, and Android App Engineering.
 
-This contains everything you need to run your app locally.
+## 🚀 Getting Started Locally
 
-View your app in AI Studio: https://ai.studio/apps/fa23eeb3-7dc4-414b-9b7a-24c3fd7d9bfb
+1. **Install Dependencies**
+   Run the following command in the root directory:
+   ```bash
+   npm install
+   ```
 
-## Run Locally
+2. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+   Open your browser and navigate to the localhost link provided in the terminal (usually `http://localhost:5173`).
 
-**Prerequisites:**  Node.js
+## 🌐 How to Host using GitHub Pages
 
+Everything in the codebase is already perfectly configured! We have added `gh-pages` and the deploy scripts to your `package.json`, and set the correct `base` path in `vite.config.ts`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Follow these simple steps:
+
+1. **Push your code to GitHub**
+   Ensure all your latest changes are committed and pushed to your repository (`IsharaLakshan2002/Portfolio-Website`).
+
+2. **Run the Deploy Script**
+   In your terminal, simply run:
+   ```bash
+   npm run deploy
+   ```
+   This command will automatically build the site and push the optimized production files to a special branch named `gh-pages`.
+
+3. **Configure GitHub Settings**
+   - Go to your repository on GitHub.
+   - Click on **Settings** > **Pages** (on the left sidebar).
+   - Under **Build and deployment** > **Source**, choose **Deploy from a branch**.
+   - Under **Branch**, select the `gh-pages` branch and the `/ (root)` folder, then click **Save**.
+   
+Within a couple of minutes, your portfolio will be live at:
+[https://IsharaLakshan2002.github.io/Portfolio-Website](https://IsharaLakshan2002.github.io/Portfolio-Website)
