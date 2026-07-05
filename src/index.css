@@ -11,17 +11,6 @@
 }
 
 :root {
-  --bg-primary: #d2cbc4;
-  --bg-secondary: #f0f0f0;
-  --bg-card: #ffffff;
-  --text-primary: #0a0a0a;
-  --text-secondary: #404040;
-  --text-muted: #a3a3a3;
-  --border: rgba(0, 0, 0, 0.08);
-  --accent: #f97316;
-}
-
-[data-theme="dark"] {
   --bg-primary: #0d0d0d;
   --bg-secondary: #141414;
   --bg-card: #1a1a1a;
@@ -29,6 +18,7 @@
   --text-secondary: #a3a3a3;
   --text-muted: #525252;
   --border: rgba(255, 255, 255, 0.08);
+  --accent: #f97316;
 }
 
 html {
@@ -47,14 +37,10 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(13, 13, 13, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-}
-
-[data-theme="dark"] .glass {
-  background: rgba(13, 13, 13, 0.7);
 }
 
 .text-gradient {

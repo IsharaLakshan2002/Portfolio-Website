@@ -1,23 +1,14 @@
-import { useState, useEffect } from 'react';
-import { Sun, Moon, Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { useEffect, useState } from 'react';
 import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
-
-  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   const navLinks = [
     { name: 'PROJECTS', href: '#projects' },
@@ -46,14 +37,6 @@ export default function Navbar() {
         <a href="#contact" className="hidden sm:flex items-center gap-2 bg-accent hover:bg-accent-hover text-black px-4 py-1.5 rounded-md text-xs font-semibold transition-all">
           CONTACT
         </a>
-
-        <button
-          onClick={toggleTheme}
-          className="w-9 h-9 grid place-items-center rounded-lg border border-[var(--border)] bg-[var(--bg-card)] text-[var(--text-secondary)] hover:text-accent hover:border-accent transition-all cursor-pointer ml-1"
-          aria-label="Toggle theme"
-        >
-          {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
-        </button>
       </div>
     </nav>
   );

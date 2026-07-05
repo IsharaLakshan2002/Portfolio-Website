@@ -1,7 +1,15 @@
+import { GraduationCap, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, GraduationCap, Send } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const nextUrl = `${globalThis.location.origin}${globalThis.location.pathname}#contact`;
+
+  const handleSubmit = () => {
+    setStatus('sending');
+  };
+
   return (
     <section id="contact" className="py-24 px-[5vw] bg-[var(--bg-primary)]">
       <div className="max-w-6xl mx-auto">
@@ -43,20 +51,33 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="flex flex-col gap-6"
-            onSubmit={(e) => e.preventDefault()}
+            action="https://formsubmit.co/sasudulpubg@gmail.com"
+            method="POST"
+            target="contact-submit-frame"
+            onSubmit={handleSubmit}
           >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="Portfolio inquiry" />
+            <input type="hidden" name="_autoresponse" value="Thanks for reaching out. I will get back to you soon." />
+            <input type="hidden" name="_next" value={nextUrl} />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="font-mono text-xs text-[var(--text-secondary)]">NAME</label>
+                <label htmlFor="contact-name" className="font-mono text-xs text-[var(--text-secondary)]">NAME</label>
                 <input 
+                  id="contact-name"
+                  name="name"
                   type="text" 
                   placeholder="Your Name" 
                   className="bg-[var(--bg-card)] border border-[var(--border)] p-3 px-4 rounded-xl text-sm focus:outline-none focus:border-accent transition-all text-[var(--text-primary)]"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="font-mono text-xs text-[var(--text-secondary)]">EMAIL</label>
+                <label htmlFor="contact-email" className="font-mono text-xs text-[var(--text-secondary)]">EMAIL</label>
                 <input 
+                  id="contact-email"
+                  name="email"
                   type="email" 
                   placeholder="your@email.com" 
                   className="bg-[var(--bg-card)] border border-[var(--border)] p-3 px-4 rounded-xl text-sm focus:outline-none focus:border-accent transition-all text-[var(--text-primary)]"
@@ -66,16 +87,18 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="font-mono text-xs text-[var(--text-secondary)]">PHONE</label>
+                <label htmlFor="contact-phone" className="font-mono text-xs text-[var(--text-secondary)]">PHONE</label>
                 <input 
+                  id="contact-phone"
+                  name="phone"
                   type="tel" 
                   placeholder="+94 ..." 
                   className="bg-[var(--bg-card)] border border-[var(--border)] p-3 px-4 rounded-xl text-sm focus:outline-none focus:border-accent transition-all text-[var(--text-primary)]"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="font-mono text-xs text-[var(--text-secondary)]">SERVICE</label>
-                <select className="bg-[var(--bg-card)] border border-[var(--border)] p-3 px-4 rounded-xl text-sm focus:outline-none focus:border-accent transition-all text-[var(--text-primary)] appearance-none">
+                <label htmlFor="contact-service" className="font-mono text-xs text-[var(--text-secondary)]">SERVICE</label>
+                <select id="contact-service" name="service" className="bg-[var(--bg-card)] border border-[var(--border)] p-3 px-4 rounded-xl text-sm focus:outline-none focus:border-accent transition-all text-[var(--text-primary)] appearance-none">
                   <option>Web Development</option>
                   <option>Android App</option>
                   <option>Full Stack Project</option>
@@ -85,19 +108,39 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="font-mono text-xs text-[var(--text-secondary)]">MESSAGE</label>
+              <label htmlFor="contact-message" className="font-mono text-xs text-[var(--text-secondary)]">MESSAGE</label>
               <textarea 
+                id="contact-message"
+                name="message"
                 rows={5} 
                 placeholder="Tell me about your project..." 
                 className="bg-[var(--bg-card)] border border-[var(--border)] p-3 px-4 rounded-xl text-sm focus:outline-none focus:border-accent transition-all text-[var(--text-primary)] resize-none"
               />
             </div>
 
-            <button className="bg-accent hover:bg-accent-hover text-black font-bold py-4 px-10 rounded-xl self-end flex items-center gap-2 group transition-all hover:-translate-y-1 shadow-lg shadow-accent/20">
-              SEND MESSAGE
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="bg-accent hover:bg-accent-hover disabled:opacity-70 disabled:cursor-not-allowed text-black font-bold py-4 px-10 rounded-xl self-end flex items-center gap-2 group transition-all hover:-translate-y-1 shadow-lg shadow-accent/20"
+            >
+              {status === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}
               <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
+
+            {status === 'success' && (
+              <p className="text-sm text-green-400 text-right">Message sent successfully.</p>
+            )}
+
+            {status === 'error' && (
+              <p className="text-sm text-red-400 text-right">Message could not be sent. Try again.</p>
+            )}
           </motion.form>
+
+          <iframe name="contact-submit-frame" title="contact-submit-frame" className="hidden" onLoad={() => {
+            if (status === 'sending') {
+              setStatus('success');
+            }
+          }} />
         </div>
       </div>
     </section>

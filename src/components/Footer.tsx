@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import customLogo from '../assets/logo.png';
 
 export default function Footer() {
@@ -24,7 +24,14 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           {[
             { icon: <Github size={20} />, href: 'https://github.com/IsharaLakshan2002', label: 'GitHub', target: "_blank", rel: "noopener noreferrer" },
-            { icon: <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.908 5.166 4.664h-6.649c.015 1.508 1.434 2.014 2.618 2.014 1.544 0 2.4-1.125 2.871-1.761l2.091 1.099zm-4.641-4.755c-.054-1.045-1.067-1.314-1.874-1.314-1.282 0-2.023.774-2.186 1.314h4.06zM9.42 16H2V3h7.106c3.151 0 5.485 1.83 5.485 5.255 0 2.274-1.309 3.824-2.923 4.417 1.956.402 3.42 2.222 3.42 4.887C15.088 20.312 12.634 22 9.42 22H2v-6h7.42c1.782 0 2.894-1.312 2.894-2.909 0-1.579-1.042-2.836-2.67-2.836H2v-5.25H9.42c1.656 0 2.768 1.258 2.768 2.836 0 1.597-1.144 2.909-2.768 2.909z"/></svg>, href: 'https://www.behance.net/isharalakshan7', label: 'Behance', target: "_blank", rel: "noopener noreferrer" },
+            { icon: <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<g fill="none" fill-rule="evenodd">
+		<path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
+		<path fill="currentColor" d="M8 5a4 4 0 0 1 2.646 7A4 4 0 0 1 8 19H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9.5 4c2.607 0 4.5 2.368 4.5 5a1 1 0 0 1-.883.993L21 15h-5.86c.358 1.224 1.353 2 2.36 2c1.08 0 1.692-.511 2.24-1.15a1 1 0 1 1 1.52 1.3l-.107.122l-.229.246C20.202 18.26 19.146 19 17.5 19c-2.607 0-4.5-2.368-4.5-5s1.893-5 4.5-5M8 13H4v4h4a2 2 0 0 0 .15-3.995zm9.5-2c-1.007 0-2.002.776-2.36 2h4.72c-.358-1.224-1.353-2-2.36-2M8 7H4v4h4a2 2 0 1 0 0-4m11-1a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2z" />
+	</g>
+</svg>
+, href: 'https://www.behance.net/isharalakshan7', label: 'Behance', target: "_blank", rel: "noopener noreferrer" },
             { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/ishara-lakshan-621733301/', label: 'LinkedIn', target: "_blank", rel: "noopener noreferrer" },
           ].map((social) => (
             <a
