@@ -87,8 +87,7 @@ export default function Hero() {
           { icon: <Monitor size={20} strokeWidth={2} />, title: 'UI/UX', sub: 'DESIGNER' },
           { icon: <Layers size={20} strokeWidth={2} />, title: 'MOBILE', sub: 'ANDROID APPS' },
           { icon: <MessageCircle size={20} strokeWidth={2} />, title: 'WHATSAPP', sub: 'SAY HELLO', href: 'https://wa.me/94760908497' }
-        ].map((role, i) => {
-          const content = (
+        ].map((role, i) => {          const content = (
             <>
               <div className="text-[var(--text-muted)] group-hover:text-accent transition-colors bg-[var(--bg-card)] p-3 rounded-lg border border-[var(--border)]">
                 {role.icon}
@@ -121,15 +120,13 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center w-full max-w-4xl mt-10">
 
         {/* Huge Name behind image */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120vw] text-center z-0 pt-10 pointer-events-none">
-          <h1 className="hero-name font-display text-[15vw] md:text-[9vw] leading-[0.85] text-[var(--text-primary)] tracking-tighter uppercase m-0">
+      <div className="absolute top-[-35px] left-1/2 -translate-x-1/2 w-[120vw] text-center z-0 pt-10 pointer-events-none">          <h1 className="hero-name font-display text-[15vw] md:text-[9vw] leading-[0.85] text-[var(--text-primary)] tracking-tighter uppercase m-0">
             Ishara <br /> Lakshan
           </h1>
         </div>
 
         {/* Decorative Arcs Behind Image */}
-        <div className="absolute top-[280px] md:top-[340px] left-1/2 -translate-x-1/2 ml-3 md:ml-6 w-[450px] md:w-[560px] z-0 pointer-events-none hidden md:block origin-top transition-all duration-500">
-          <svg width="100%" height="100%" viewBox="0 0 1010 906" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="absolute top-[240px] md:top-[290px] left-1/2 -translate-x-1/2 ml-3 md:ml-6 w-[450px] md:w-[560px] z-0 pointer-events-none hidden md:block origin-top transition-all duration-500">          <svg width="100%" height="100%" viewBox="0 0 1010 906" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_2011_180)" data-figma-bg-blur-radius="35">
               <mask id="path-1-inside-1_2011_180" fill="white">
                 <path d="M504.538 100C700.896 100 860.075 258.94 860.075 455.001C860.075 457.456 860.05 459.905 860 462.349V805.231H149V448.231H149.063C152.677 255.294 310.445 100 504.538 100Z"/>
@@ -171,8 +168,7 @@ export default function Hero() {
         </div>
 
         {/* Profile Image */}
-        <div className="hero-image relative z-10 mt-32 md:mt-48 flex justify-center w-full max-w-[400px]">
-          <img
+        <div className="hero-image relative z-10 mt-20 md:mt-36 flex justify-center w-full max-w-[400px]">          <img
             src={profilePic}
             alt="Portrait of Ishara Lakshan"
             className="w-full h-auto object-contain drop-shadow-2xl"
